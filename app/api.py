@@ -157,3 +157,7 @@ async def user_logout(token: str, db: Session = Depends(get_db)):
     return {
         "data": "User has been logged out."
     }
+@app.get("/health-check", tags=["root"])
+def health_check():
+
+    return HTTPResponse(status=200, body="OK")
